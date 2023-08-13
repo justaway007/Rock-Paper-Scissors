@@ -9,49 +9,49 @@
 
     <h1>Let's play a game!</h1>
     <p>Rock, paper, or scissors GO!</p>
-    <button onclick="">Press to Play!</button>
+    <button onclick="game()">Press to Play!</button>
 
     <script>
     
     let playerInput = "blank";
+    let playerChoice = (playerInput.toUpperCase());
    
     function getRndInteger(min,max) {
         return Math.floor(Math.random()*(max-min))+min;
     }
     let randomChoice = getRndInteger(1,4)
-    console.log(randomChoice)
+ //   console.log(randomChoice)
     
     function getComputerChoice (){
         if (randomChoice === 1){
-            return "Rock";
+            return "ROCK";
         } else if (randomChoice === 2){
-            return "Paper";
+            return "PAPER";
         } else {
-            return "Scissors";
+            return "SCISSORS";
         }
     }
-    const computerChoice = (getComputerChoice().toUpperCase());
-    const playerChoice = (playerInput.toUpperCase());
+
 
     // the game
     // player input
     // comparison
     // can either use player choice compare to random one by one
     //
-    function fight(){
-        if (playerChoice === computerChoice){
+    function fight(player, computer){
+        if (player === computer){
             return "Draw";
-        } else if (playerChoice === "ROCK" && computerChoice === "PAPER") {
+        } else if (player === "ROCK" && computer === "PAPER") {
             return "You're a loser!";
-        } else if (playerChoice === "ROCK" && computerChoice === "SCISSORS") {
+        } else if (player === "ROCK" && computer === "SCISSORS") {
             return "Winner, winner, chicken dinner!";
-        } else if (playerChoice === "PAPER" && computerChoice === "ROCK") {
+        } else if (player === "PAPER" && computer === "ROCK") {
             return "Winner, winner, chicken dinner!";
-        } else if (playerChoice === "PAPER" && computerChoice === "SCISSORS") {
+        } else if (player === "PAPER" && computer === "SCISSORS") {
             return "You're a loser!";
-        } else if (playerChoice === "SCISSORS" && computerChoice === "ROCK") {
+        } else if (player === "SCISSORS" && computer === "ROCK") {
             return "You're a loser!";
-        } else if (playerChoice === "SCISSORS" && computerChoice === "PAPER") {
+        } else if (player === "SCISSORS" && computer === "PAPER") {
             return "Winner, winner, chicken dinner!";
         } else {
             return "huh";
@@ -60,12 +60,13 @@
 
 
 
-    //const playerChoice = "PAPER";
-    console.log ("Player choice is " + playerChoice)
-    console.log ("Computer choice is " + computerChoice);
-    console.log("result is " + fight())
- //   console.log("game result is " + game())
-  //  console.log(game())
+//  const playerChoice = "PAPER";
+//  console.log ("Player choice is " + playerChoice)
+  console.log ("Computer choice is " + getComputerChoice());
+  console.log (fight("ROCK","PAPER"))
+//  console.log("result is " + fight())
+//  console.log("game result is " + game())
+//  console.log(game())
 
     
 
