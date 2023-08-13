@@ -14,10 +14,17 @@
     let randomChoice = getRndInteger(1,4)
     console.log(randomChoice)
     
- //   function getComputerChoice (){
-   //     if randomChoice = 1
-        
-    //}
+    function getComputerChoice (){
+        if (randomChoice === 1){
+            return "Rock";
+        } else if (randomChoice === 2){
+            return "Paper";
+        } else {
+            return "Scissors";
+        }
+    }
+    console.log (getComputerChoice())
+
 
 
     
