@@ -30,15 +30,34 @@
 
     // the game
     // player input
-    let playerChoice = "paper";
+    let playerChoice = "PAPER";
+    console.log (playerChoice)
     // comparison
     // can either use player choice compare to random one by one
     //
-  //  function fight(){
-    //    if (playerChoice === getComputerChoice()){
-      //      return "Draw";
-        //} else if (playerChoice === "ROCK")
-    //}
+    function fight(){
+        if (playerChoice === computerChoice){
+            return "Draw";
+        } else if (playerChoice === "ROCK" && computerChoice === "PAPER") {
+            return "You're a loser!";
+        } else if (playerChoice === "ROCK" && computerChoice === "SCISSORS") {
+            return "Winner, winner, chicken dinner!";
+        } else if (playerChoice === "PAPER" && computerChoice === "ROCK") {
+            return "Winner, winner, chicken dinner!";
+        } else if (playerChoice === "PAPER" && computerChoice === "SCISSORS") {
+            return "You're a loser!";
+        } else if (playerChoice === "SCISSORS" && computerChoice === "ROCK") {
+            return "You're a loser!";
+        } else if (playerChoice === "SCISSORS" && computerChoice === "PAPER") {
+            return "Winner, winner, chicken dinner!";
+        } else {
+            return "huh";
+        }
+    }
+
+
+
+    console.log(fight())
     // output/ results win or lose
 
     
