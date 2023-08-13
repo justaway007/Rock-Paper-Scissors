@@ -6,10 +6,15 @@
 </head>
 
 <body>
+
     <h1>Let's play a game!</h1>
     <p>Rock, paper, or scissors GO!</p>
-    <script>
+    <button onclick="">Press to Play!</button>
 
+    <script>
+    
+    let playerInput = "blank";
+   
     function getRndInteger(min,max) {
         return Math.floor(Math.random()*(max-min))+min;
     }
@@ -25,13 +30,11 @@
             return "Scissors";
         }
     }
-    let computerChoice = (getComputerChoice().toUpperCase());
-    console.log (computerChoice);
+    const computerChoice = (getComputerChoice().toUpperCase());
+    const playerChoice = (playerInput.toUpperCase());
 
     // the game
     // player input
-    let playerChoice = "PAPER";
-    console.log (playerChoice)
     // comparison
     // can either use player choice compare to random one by one
     //
@@ -57,8 +60,12 @@
 
 
 
-    console.log(fight())
-    // output/ results win or lose
+    //const playerChoice = "PAPER";
+    console.log ("Player choice is " + playerChoice)
+    console.log ("Computer choice is " + computerChoice);
+    console.log("result is " + fight())
+ //   console.log("game result is " + game())
+  //  console.log(game())
 
     
 
