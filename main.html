@@ -9,14 +9,11 @@
 
     <h1>Let's play a game!</h1>
     <p>Rock, paper, or scissors GO!</p>
-    <button onclick="console.log(game())">Press to Play!</button>
+    <button onclick="console.log(playRound())">Press to Play!</button>
 
     <script>
     
-
-    //game 1. has to run the below functions
-    // 2. has to keep score
-    // 3. has to loop at least 5 times and declare a winner
+    
    
     function getRndInteger(min,max) {
         return Math.floor(Math.random()*(max-min))+min;
@@ -35,11 +32,6 @@
     }
 
 
-    // the game
-    // player input
-    // comparison
-    // can either use player choice compare to random one by one
-    //
     function fight(player, computer){
         if (player === computer){
             return "Draw";
@@ -61,7 +53,7 @@
     }
 
 
-    function game(){
+    function playRound(){
         let playerInput = prompt("Choose your weapon!", "");
         console.log (playerInput);
         playerInput = (playerInput.toUpperCase());
@@ -70,7 +62,7 @@
             if (playerInput == "ROCK" || playerInput == "PAPER" || playerInput == "SCISSORS") {
                 return fight(playerInput, getComputerChoice());
             } else {
-                return "ERROR NOT A VALID WEAPON";
+                return playerInput + " IS NOT A VALID WEAPON!!!";
             }   
     }
 
@@ -84,7 +76,13 @@
 //  console.log("game result is " + game())
 //  console.log(game())
 
-    
+    //game 1. has to run the below functions
+    // 2. has to keep score
+    // 3. has to loop at least 5 times and declare a winner
+
+    // TO DO LIST
+    // playRound function -- > click button runs a game and keeps score. display on html?(extra)
+
 
         
     
