@@ -12,9 +12,7 @@
     <button onclick="console.log(playRound())">Press to Play!</button>
 
     <script>
-    
-    
-   
+
     function getRndInteger(min,max) {
         return Math.floor(Math.random()*(max-min))+min;
     }
@@ -34,18 +32,26 @@
 
     function fight(player, computer){
         if (player === computer){
+            loseScore = loseScore +1;
+            winScore = winScore +1;
             return "Draw";
         } else if (player === "ROCK" && computer === "PAPER") {
+            loseScore = loseScore +1;
             return "You're a loser!";
         } else if (player === "ROCK" && computer === "SCISSORS") {
+            winScore = winScore +1;
             return "Winner, winner, chicken dinner!";
         } else if (player === "PAPER" && computer === "ROCK") {
+            winScore = winScore +1;
             return "Winner, winner, chicken dinner!";
         } else if (player === "PAPER" && computer === "SCISSORS") {
+            loseScore = loseScore +1;
             return "You're a loser!";
         } else if (player === "SCISSORS" && computer === "ROCK") {
+            loseScore = loseScore +1;
             return "You're a loser!";
         } else if (player === "SCISSORS" && computer === "PAPER") {
+            winScore = winScore +1;
             return "Winner, winner, chicken dinner!";
         } else {
             return "huh";
@@ -55,10 +61,10 @@
 
     function playRound(){
         let playerInput = prompt("Choose your weapon!", "");
-        console.log (playerInput);
+        //console.log (playerInput);
         playerInput = (playerInput.toUpperCase());
-        console.log (playerInput);
-        console.log(typeof(playerInput));
+        //console.log (playerInput);
+        //console.log(typeof(playerInput));
             if (playerInput == "ROCK" || playerInput == "PAPER" || playerInput == "SCISSORS") {
                 return fight(playerInput, getComputerChoice());
             } else {
@@ -82,9 +88,12 @@
 
     // TO DO LIST
     // playRound function -- > click button runs a game and keeps score. display on html?(extra)
+    
+// playRound 5 times and gives a score tally
 
-
-        
+let winScore = 0;
+let loseScore = 0;
+console.log(winScore);
     
     </script>
 </body>
