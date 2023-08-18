@@ -9,7 +9,7 @@
 
     <h1>Let's play a game!</h1>
     <p>Rock, paper, or scissors GO!</p>
-    <button onclick="console.log(playRound())">Press to Play!</button>
+    <button onclick="return game()">Press to Play!</button>
 
     <script>
 
@@ -29,11 +29,13 @@
         }
     }
 
+let winScore = 0;
+let loseScore = 0;
 
     function fight(player, computer){
+        console.log ("You play " + player + "...");
+        console.log ("I play " + computer + "!");
         if (player === computer){
-            loseScore = loseScore +1;
-            winScore = winScore +1;
             return "Draw";
         } else if (player === "ROCK" && computer === "PAPER") {
             loseScore = loseScore +1;
@@ -63,7 +65,6 @@
         let playerInput = prompt("Choose your weapon!", "");
         //console.log (playerInput);
         playerInput = (playerInput.toUpperCase());
-        //console.log (playerInput);
         //console.log(typeof(playerInput));
             if (playerInput == "ROCK" || playerInput == "PAPER" || playerInput == "SCISSORS") {
                 return fight(playerInput, getComputerChoice());
@@ -91,9 +92,23 @@
     
 // playRound 5 times and gives a score tally
 
-let winScore = 0;
-let loseScore = 0;
-console.log(winScore);
+    function game(){
+        console.log(playRound());
+        console.log("Win - " + winScore + " : " + loseScore + " - Lose");
+        if (winScore == 3){
+            winScore = 0; 
+            loseScore = 0;
+            console.log("You're a CHAMPION! WOW!");
+        } else if (loseScore == 3) {
+            winScore = 0; 
+            loseScore = 0;
+            console.log("Game over, LOSER!");
+        } else {
+            console.log("Go again?");
+        }
+    }
+
+
     
     </script>
 </body>
